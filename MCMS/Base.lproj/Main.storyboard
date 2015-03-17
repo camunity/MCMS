@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="1197" y="337"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="W7T-Dl-72h">
             <objects>
                 <viewController id="nv2-e8-3Kh" customClass="DetailViewController" sceneMemberID="viewController">
@@ -238,16 +238,6 @@
                                     <rect key="frame" x="104" y="250" width="192" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-0X-RcN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Edit"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="322" y="72" width="62" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onEditButtonPressed:" destination="nv2-e8-3Kh" eventType="touchUpInside" id="mF9-5h-77d"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-tm-mwy">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -282,7 +272,6 @@
                                 <exclude reference="XnG-St-7bq"/>
                                 <exclude reference="3js-h7-OLO"/>
                                 <exclude reference="ANZ-fi-q9e"/>
-                                <exclude reference="wXK-0X-RcN"/>
                                 <exclude reference="rzy-tm-mwy"/>
                                 <exclude reference="utG-ls-y1Y"/>
                             </mask>
@@ -293,13 +282,19 @@
                                 <include reference="XnG-St-7bq"/>
                                 <include reference="3js-h7-OLO"/>
                                 <include reference="ANZ-fi-q9e"/>
-                                <include reference="wXK-0X-RcN"/>
                                 <include reference="rzy-tm-mwy"/>
                                 <include reference="utG-ls-y1Y"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="VEh-XL-0cZ">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="dfw-Ul-j87">
+                            <connections>
+                                <action selector="onEditButtonPressed:" destination="nv2-e8-3Kh" id="agS-zM-mn7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="accessoriesTableView" destination="utG-ls-y1Y" id="Izj-Vo-WTF"/>
@@ -307,7 +302,6 @@
                         <outlet property="creatureDetailTextField" destination="ANZ-fi-q9e" id="Iix-wG-x7G"/>
                         <outlet property="creatureNameLabel" destination="VB2-DU-bx3" id="ybV-J5-fwN"/>
                         <outlet property="creatureNameTextField" destination="XnG-St-7bq" id="UaH-Ua-Sng"/>
-                        <outlet property="editButton" destination="wXK-0X-RcN" id="wwc-iV-6hl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0O-u9-X8J" userLabel="First Responder" sceneMemberID="firstResponder"/>

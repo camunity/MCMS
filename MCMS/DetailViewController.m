@@ -16,7 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *creatureDetailTextField;
 @property (strong, nonatomic) IBOutlet UITableView *accessoriesTableView;
 @property NSArray *weaponsAvailable;
-@property (strong, nonatomic) IBOutlet UIButton *editButton;
 @end
 
 @implementation DetailViewController
@@ -49,17 +48,16 @@
     return self.weaponsAvailable.count;
 }
 
-- (IBAction)onEditButtonPressed:(UIButton *)sender {
-    
-    if ([sender.titleLabel.text isEqualToString:@"Edit"]) {
-        sender.titleLabel.text = @"Done";
-        [self.accessoriesTableView setEditing:YES animated:YES];
-    } else {
-        sender.titleLabel.text = @"Edit";
-        [self.accessoriesTableView setEditing:NO animated:YES];
+- (IBAction)onEditButtonPressed:(UIBarButtonItem *)sender {
+
+    if([sender.title isEqualToString:@"Edit"])
+    {
+        sender.title = @"Done";
     }
-
-
+    else
+    {
+        sender.title = @"Edit";
+    }
 }
 
 

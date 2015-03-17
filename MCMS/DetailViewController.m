@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *creatureDetailTextField;
 @property (strong, nonatomic) IBOutlet UITableView *accessoriesTableView;
 @property NSArray *weaponsAvailable;
+@property (strong, nonatomic) IBOutlet UIImageView *creatureImageView;
 @end
 
 @implementation DetailViewController
@@ -36,10 +37,7 @@
     self.creatureDetailTextField.text = self.creature.detail;
     self.creatureDetailLabel.text = self.creature.detail;
 
-
-
-
-
+    self.creatureImageView.image = self.creature.creatureImage;
 }
 
 
@@ -74,7 +72,8 @@
         self.creatureDetailLabel.text = self.creatureDetailTextField.text;
         self.creature.name = self.creatureNameTextField.text;
         self.creature.detail = self.creatureDetailTextField.text;
-
+        [self.creatureNameLabel sizeToFit];
+        [self.creatureDetailLabel sizeToFit];
     }
 }
 

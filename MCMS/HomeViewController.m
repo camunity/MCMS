@@ -26,11 +26,18 @@
     MagicalCreature *eevee = [[MagicalCreature alloc]initWithName:@"Eevee" WithDetail:@"Identity Issues but that's okay"];
     MagicalCreature *charmander = [[MagicalCreature alloc]initWithName:@"Charmander" WithDetail:@"Supa Hawt Fiya"];
 
+    pikachu.creatureImage = [UIImage imageNamed:@"Pikachu"];
+    squirtle.creatureImage = [UIImage imageNamed:@"squirtle"];
+    eevee.creatureImage = [UIImage imageNamed:@"eevee"];
+    charmander.creatureImage = [UIImage imageNamed:@"charmander"];
+    
 self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, charmander, nil];
 }
 
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [self.creaturesTableView reloadData];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

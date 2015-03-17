@@ -12,6 +12,8 @@
 
 @interface HomeViewController () < UITableViewDataSource, UITableViewDelegate >
 @property (strong, nonatomic) IBOutlet UITableView *creaturesTableView;
+@property (strong, nonatomic) IBOutlet UITextField *creatureTextField;
+@property (strong, nonatomic) IBOutlet UITextField *detailTextField;
 
 @end
 
@@ -44,6 +46,22 @@ self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, char
     cell.detailTextLabel.text = creature.detail;
     return cell;
     
+}
+- (IBAction)onAddButtonPressed:(UIButton*)sender
+{
+    if([self.creatureTextField.text isEqualToString:@""])
+    {
+        //alert view yell at user
+    }
+    else
+    {
+        MagicalCreature *creature = [[MagicalCreature alloc]initWithName:self.creatureTextField.text WithDetail:self.detailTextField.text];
+        [self.creatures addObject:creature];
+        [self.view resignFirstResponder];
+        self.detailTextField.text = @"";
+        self.creatureTextField.text = @"";
+        [self.creaturesTableView reloadData];
+    }
 }
 
 

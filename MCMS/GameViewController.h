@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
 
 @interface GameViewController : UIViewController
+@property NSMutableArray *creatures;
+
 
 @end

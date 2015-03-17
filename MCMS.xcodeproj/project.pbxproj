@@ -97,13 +97,13 @@
 				F31B654D1AB8B62D00EC5767 /* DetailViewController.m */,
 				F31B65461AB8AF7A00EC5767 /* HomeViewController.h */,
 				F31B65471AB8AF7A00EC5767 /* HomeViewController.m */,
+				271CC8FE1AB8D9BD0054069B /* GameViewController.h */,
+				271CC8FF1AB8D9BD0054069B /* GameViewController.m */,
 				F31B65491AB8AFAE00EC5767 /* MagicalCreature.h */,
 				F31B654A1AB8AFAE00EC5767 /* MagicalCreature.m */,
 				F31B652D1AB8AE3C00EC5767 /* Images.xcassets */,
 				F31B652F1AB8AE3C00EC5767 /* LaunchScreen.xib */,
 				F31B65201AB8AE3C00EC5767 /* Supporting Files */,
-				271CC8FE1AB8D9BD0054069B /* GameViewController.h */,
-				271CC8FF1AB8D9BD0054069B /* GameViewController.m */,
 			);
 			path = MCMS;
 			sourceTree = "<group>";

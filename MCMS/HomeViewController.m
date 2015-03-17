@@ -26,14 +26,16 @@
     MagicalCreature *squirtle = [[MagicalCreature alloc]initWithName:@"Squirtle" WithDetail:@"Cool as Water"];
     MagicalCreature *eevee = [[MagicalCreature alloc]initWithName:@"Eevee" WithDetail:@"Identity Issues but that's okay"];
     MagicalCreature *charmander = [[MagicalCreature alloc]initWithName:@"Charmander" WithDetail:@"Supa Hawt Fiya"];
+    MagicalCreature *tribble = [[MagicalCreature alloc]initWithName:@"Tribble" WithDetail:@"Tribble Mo Fo"];
 
 
     pikachu.creatureImage = [UIImage imageNamed:@"Pikachu"];
     squirtle.creatureImage = [UIImage imageNamed:@"squirtle"];
     eevee.creatureImage = [UIImage imageNamed:@"eevee"];
     charmander.creatureImage = [UIImage imageNamed:@"charmander"];
-    
-self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, charmander, nil];
+    tribble.creatureImage = [UIImage imageNamed:@"tribble"];
+
+    self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, charmander, tribble, nil];
 
     for (MagicalCreature *creature in self.creatures)
     { //shows me everything in the group
@@ -88,18 +90,24 @@ self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, char
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)cell {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSIndexPath *indexPath = [self.creaturesTableView indexPathForCell:cell];
-    MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-    DetailViewController *vc = [segue destinationViewController];
-    vc.title = creature.name;
-    vc.creature = creature;
+    if ([segue.identifier isEqualToString:@"ShowCreatureSegue"]) {
+        NSIndexPath *indexPath = [self.creaturesTableView indexPathForCell:cell];
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+        DetailViewController *vc = [segue destinationViewController];
+        vc.title = creature.name;
+        vc.creature = creature;
+    } else {
+        for (MagicalCreature *creature in self.creatures)
+        { //shows me everything in the group
+            creature.creatureXP = arc4random_uniform(100)+1;
+            NSLog(@"%@ has %li", creature.name, (long)creature.creatureXP);
+        }
+        GameViewController *vc = [segue destinationViewController];
+        vc.creatures = self.creatures;
+    }
+
 }
 
-
-- (IBAction)backToHomeController:(DetailViewController *)sender {
-
-    
-}
 
 
 

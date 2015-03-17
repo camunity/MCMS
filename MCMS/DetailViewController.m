@@ -30,7 +30,16 @@
                              @"Crossbow",
                              @"Ben Beard",
                              nil];
-    // Do any additional setup after loading the view.
+
+    self.creatureNameTextField.text = self.creature.name;
+    self.creatureNameLabel.text = self.creature.name;
+    self.creatureDetailTextField.text = self.creature.detail;
+    self.creatureDetailLabel.text = self.creature.detail;
+
+
+
+
+
 }
 
 
@@ -53,10 +62,19 @@
     if([sender.title isEqualToString:@"Edit"])
     {
         sender.title = @"Done";
+        self.creatureNameTextField.hidden = NO;
+        self.creatureDetailTextField.hidden = NO;
     }
     else
     {
         sender.title = @"Edit";
+        self.creatureNameTextField.hidden = YES;
+        self.creatureDetailTextField.hidden = YES;
+        self.creatureNameLabel.text = self.creatureNameTextField.text;
+        self.creatureDetailLabel.text = self.creatureDetailTextField.text;
+        self.creature.name = self.creatureNameTextField.text;
+        self.creature.detail = self.creatureDetailTextField.text;
+
     }
 }
 

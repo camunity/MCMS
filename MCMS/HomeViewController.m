@@ -75,7 +75,23 @@ self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, char
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
     DetailViewController *vc = [segue destinationViewController];
     vc.title = creature.name;
+    vc.creature = creature;
 }
+
+
+- (IBAction)backToHomeController:(DetailViewController *)sender {
+
+    
+}
+
+
+
+
+
+
+
+
+
 
 
 @end

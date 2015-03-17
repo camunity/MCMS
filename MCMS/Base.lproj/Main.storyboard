@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -149,14 +150,14 @@
                             <mask key="constraints">
                                 <exclude reference="2AW-Ut-Uiy"/>
                                 <exclude reference="e0t-EG-E16"/>
+                                <exclude reference="3Vi-ca-Hoq"/>
                                 <exclude reference="LhJ-dX-yzq"/>
                                 <exclude reference="nKa-uK-Fej"/>
+                                <exclude reference="Oss-Za-bK2"/>
+                                <exclude reference="bsj-7f-9Mn"/>
                                 <exclude reference="Nlx-52-SKj"/>
                                 <exclude reference="cl4-gz-abG"/>
                                 <exclude reference="gwW-wD-mds"/>
-                                <exclude reference="Oss-Za-bK2"/>
-                                <exclude reference="bsj-7f-9Mn"/>
-                                <exclude reference="3Vi-ca-Hoq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -169,14 +170,14 @@
                             <mask key="constraints">
                                 <include reference="2AW-Ut-Uiy"/>
                                 <include reference="e0t-EG-E16"/>
+                                <include reference="3Vi-ca-Hoq"/>
                                 <include reference="LhJ-dX-yzq"/>
                                 <include reference="nKa-uK-Fej"/>
+                                <include reference="Oss-Za-bK2"/>
+                                <include reference="bsj-7f-9Mn"/>
                                 <include reference="Nlx-52-SKj"/>
                                 <include reference="cl4-gz-abG"/>
                                 <include reference="gwW-wD-mds"/>
-                                <include reference="Oss-Za-bK2"/>
-                                <include reference="bsj-7f-9Mn"/>
-                                <include reference="3Vi-ca-Hoq"/>
                             </mask>
                         </variation>
                     </view>
@@ -191,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="1197" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="W7T-Dl-72h">
             <objects>
-                <viewController id="nv2-e8-3Kh" sceneMemberID="viewController">
+                <viewController id="nv2-e8-3Kh" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hB6-0G-IO4"/>
                         <viewControllerLayoutGuide type="bottom" id="X7c-ac-FgU"/>
@@ -202,8 +203,99 @@
                     <view key="view" contentMode="scaleToFill" id="tNL-y4-ySd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-0X-RcN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="338" y="72" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditButtonPressed:" destination="nv2-e8-3Kh" eventType="touchUpInside" id="mF9-5h-77d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VB2-DU-bx3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="105" width="192" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-St-7bq">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="102" width="192" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3js-h7-OLO">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="253" width="192" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANZ-fi-q9e">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="250" width="192" height="30"/>
+                                </variation>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-tm-mwy">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="148" y="140" width="104" height="99"/>
+                                </variation>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="utG-ls-y1Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="288" width="405" height="312"/>
+                                </variation>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wXK-0X-RcN"/>
+                                <exclude reference="VB2-DU-bx3"/>
+                                <exclude reference="XnG-St-7bq"/>
+                                <exclude reference="3js-h7-OLO"/>
+                                <exclude reference="ANZ-fi-q9e"/>
+                                <exclude reference="rzy-tm-mwy"/>
+                                <exclude reference="utG-ls-y1Y"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wXK-0X-RcN"/>
+                                <include reference="VB2-DU-bx3"/>
+                                <include reference="XnG-St-7bq"/>
+                                <include reference="3js-h7-OLO"/>
+                                <include reference="ANZ-fi-q9e"/>
+                                <include reference="rzy-tm-mwy"/>
+                                <include reference="utG-ls-y1Y"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="creatureDetailLabel" destination="3js-h7-OLO" id="As7-SH-caY"/>
+                        <outlet property="creatureDetailTextField" destination="ANZ-fi-q9e" id="Iix-wG-x7G"/>
+                        <outlet property="creatureNameLabel" destination="VB2-DU-bx3" id="ybV-J5-fwN"/>
+                        <outlet property="creatureNameTextField" destination="XnG-St-7bq" id="UaH-Ua-Sng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0O-u9-X8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

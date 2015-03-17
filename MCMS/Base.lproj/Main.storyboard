@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lrb-jy-NWw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -204,18 +204,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-0X-RcN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="338" y="72" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onEditButtonPressed:" destination="nv2-e8-3Kh" eventType="touchUpInside" id="mF9-5h-77d"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VB2-DU-bx3">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -250,6 +238,16 @@
                                     <rect key="frame" x="104" y="250" width="192" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-0X-RcN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="322" y="72" width="62" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditButtonPressed:" destination="nv2-e8-3Kh" eventType="touchUpInside" id="mF9-5h-77d"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-tm-mwy">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -259,30 +257,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="utG-ls-y1Y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeaponsCell" id="c2D-h5-reR">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c2D-h5-reR" id="W9Z-HX-yNG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="288" width="405" height="312"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="nv2-e8-3Kh" id="ouJ-bY-b3q"/>
+                                    <outlet property="delegate" destination="nv2-e8-3Kh" id="d9g-5X-m88"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="wXK-0X-RcN"/>
                                 <exclude reference="VB2-DU-bx3"/>
                                 <exclude reference="XnG-St-7bq"/>
                                 <exclude reference="3js-h7-OLO"/>
                                 <exclude reference="ANZ-fi-q9e"/>
+                                <exclude reference="wXK-0X-RcN"/>
                                 <exclude reference="rzy-tm-mwy"/>
                                 <exclude reference="utG-ls-y1Y"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="wXK-0X-RcN"/>
                                 <include reference="VB2-DU-bx3"/>
                                 <include reference="XnG-St-7bq"/>
                                 <include reference="3js-h7-OLO"/>
                                 <include reference="ANZ-fi-q9e"/>
+                                <include reference="wXK-0X-RcN"/>
                                 <include reference="rzy-tm-mwy"/>
                                 <include reference="utG-ls-y1Y"/>
                             </mask>
@@ -291,10 +302,12 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="accessoriesTableView" destination="utG-ls-y1Y" id="Izj-Vo-WTF"/>
                         <outlet property="creatureDetailLabel" destination="3js-h7-OLO" id="As7-SH-caY"/>
                         <outlet property="creatureDetailTextField" destination="ANZ-fi-q9e" id="Iix-wG-x7G"/>
                         <outlet property="creatureNameLabel" destination="VB2-DU-bx3" id="ybV-J5-fwN"/>
                         <outlet property="creatureNameTextField" destination="XnG-St-7bq" id="UaH-Ua-Sng"/>
+                        <outlet property="editButton" destination="wXK-0X-RcN" id="wwc-iV-6hl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0O-u9-X8J" userLabel="First Responder" sceneMemberID="firstResponder"/>

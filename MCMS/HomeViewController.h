@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  MCMS
 //
 //  Created by Cameron Flowers on 3/17/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface HomeViewController : UIViewController
+@property NSMutableArray *creatures; 
 @end
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271CC9001AB8D9BD0054069B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271CC8FF1AB8D9BD0054069B /* GameViewController.m */; };
 		F31B65231AB8AE3C00EC5767 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F31B65221AB8AE3C00EC5767 /* main.m */; };
 		F31B65261AB8AE3C00EC5767 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F31B65251AB8AE3C00EC5767 /* AppDelegate.m */; };
 		F31B652C1AB8AE3C00EC5767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31B652A1AB8AE3C00EC5767 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271CC8FE1AB8D9BD0054069B /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		271CC8FF1AB8D9BD0054069B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		F31B651D1AB8AE3C00EC5767 /* MCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31B65211AB8AE3C00EC5767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F31B65221AB8AE3C00EC5767 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				F31B652D1AB8AE3C00EC5767 /* Images.xcassets */,
 				F31B652F1AB8AE3C00EC5767 /* LaunchScreen.xib */,
 				F31B65201AB8AE3C00EC5767 /* Supporting Files */,
+				271CC8FE1AB8D9BD0054069B /* GameViewController.h */,
+				271CC8FF1AB8D9BD0054069B /* GameViewController.m */,
 			);
 			path = MCMS;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				F31B65261AB8AE3C00EC5767 /* AppDelegate.m in Sources */,
 				F31B654B1AB8AFAE00EC5767 /* MagicalCreature.m in Sources */,
 				F31B65231AB8AE3C00EC5767 /* main.m in Sources */,
+				271CC9001AB8D9BD0054069B /* GameViewController.m in Sources */,
 				F31B65481AB8AF7A00EC5767 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +430,7 @@
 				F31B65421AB8AE3C00EC5767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F31B65431AB8AE3C00EC5767 /* Build configuration list for PBXNativeTarget "MCMSTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				F31B65451AB8AE3C00EC5767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

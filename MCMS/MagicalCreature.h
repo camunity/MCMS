@@ -14,7 +14,7 @@
 @property NSString *detail;
 @property UIImage *creatureImage;
 @property NSMutableArray *accessories;
-@property NSInteger *creatureXP;
+@property NSInteger creatureXP;
 
 -(instancetype)initWithName:(NSString *)name WithDetail:(NSString *)detail;
 

@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "MagicalCreature.h"
 #import "DetailViewController.h"
+#import "GameViewController.h"
 
 @interface HomeViewController () < UITableViewDataSource, UITableViewDelegate >
 @property (strong, nonatomic) IBOutlet UITableView *creaturesTableView;
@@ -26,12 +27,20 @@
     MagicalCreature *eevee = [[MagicalCreature alloc]initWithName:@"Eevee" WithDetail:@"Identity Issues but that's okay"];
     MagicalCreature *charmander = [[MagicalCreature alloc]initWithName:@"Charmander" WithDetail:@"Supa Hawt Fiya"];
 
+
     pikachu.creatureImage = [UIImage imageNamed:@"Pikachu"];
     squirtle.creatureImage = [UIImage imageNamed:@"squirtle"];
     eevee.creatureImage = [UIImage imageNamed:@"eevee"];
     charmander.creatureImage = [UIImage imageNamed:@"charmander"];
     
 self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, charmander, nil];
+
+    for (MagicalCreature *creature in self.creatures)
+    { //shows me everything in the group
+        creature.creatureXP = arc4random_uniform(100)+1;
+        NSLog(@"%@ has %li", creature.name, (long)creature.creatureXP);
+    }
+
 }
 
 
@@ -67,6 +76,7 @@ self.creatures = [NSMutableArray arrayWithObjects:pikachu, squirtle, eevee, char
         [self.view resignFirstResponder];
         self.detailTextField.text = @"";
         self.creatureTextField.text = @"";
+        creature.creatureXP = arc4random_uniform(100)+1;
         [self.creaturesTableView reloadData];
     }
 }

@@ -27,7 +27,7 @@
                              @"Hairball",
                              @"Nunchucks",
                              @"Urine Stream",
-                             @"A Mother's Love"
+                             @"A Mother's Love",
                              @"Crossbow",
                              @"Ben Beard",
                              nil];

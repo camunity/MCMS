@@ -7,11 +7,15 @@
 //
 
 #import "GameViewController.h"
+#import "MagicalCreature.h"
 
 @interface GameViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *battler1;
 @property (strong, nonatomic) IBOutlet UIImageView *battler2;
 @property (strong, nonatomic) IBOutlet UIImageView *battler3;
+@property NSTimer *timer;
+@property int timerInt;
+@property MagicalCreature *winningCreature;
 
 @end
 
@@ -21,51 +25,54 @@
     [super viewDidLoad];
     [self startBattle];
 
+    self.timerInt = 0;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                  target:self
+                                                selector:@selector(countDown)
+                                                userInfo:nil
+                                                 repeats:YES];
+
+
+
+
+
+
+
+}
+
+- (void)countDown {
+
+    if (self.timerInt++ == 3) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Battle Over"
+                                                        message:[NSString stringWithFormat:@"The Winner is %@ with %li points", self.winningCreature.name,
+                                                                 self.winningCreature.creatureXP]
+                                                       delegate:self
+                                              cancelButtonTitle:@"Dismiss"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self.timer invalidate];
+    }
+
+
 }
 
 - (void)startBattle {
 
     NSSortDescriptor *sort;
-    sort = [[NSSortDescriptor alloc]initWithKey:@"creatureXP" ascending:YES];
+    sort = [[NSSortDescriptor alloc]initWithKey:@"creatureXP" ascending:NO];
     NSArray *newArray = [NSArray arrayWithObject:sort];
     NSArray *newnewArray;
     newnewArray = [self.creatures sortedArrayUsingDescriptors:newArray];
 
-
-
-
-
+    self.winningCreature = [newnewArray objectAtIndex:0];
 
     self.battler1.image = [[newnewArray objectAtIndex:0] creatureImage];
     self.battler2.image = [[newnewArray objectAtIndex:1] creatureImage];
     self.battler3.image = [[newnewArray objectAtIndex:2] creatureImage];
 
-
-
-
-    CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    [anim setToValue:[NSNumber numberWithFloat:0.0f]];
-    [anim setFromValue:[NSNumber numberWithDouble:M_PI/16]]; // rotation angle
-    [anim setDuration:0.05];
-    [anim setRepeatCount:NSUIntegerMax];
-    [anim setAutoreverses:YES];
-    [self.battler1.layer addAnimation:anim forKey:@"iconShake"];
-
-    CABasicAnimation* anim2 = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    [anim2 setToValue:[NSNumber numberWithFloat:0.0f]];
-    [anim2 setFromValue:[NSNumber numberWithDouble:M_PI/12]]; // rotation angle
-    [anim2 setDuration:0.3];
-    [anim2 setRepeatCount:NSUIntegerMax];
-    [anim2 setAutoreverses:YES];
-    [self.battler2.layer addAnimation:anim2 forKey:@"iconShake"];
-
-    CABasicAnimation* anim3 = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    [anim3 setToValue:[NSNumber numberWithFloat:0.0f]];
-    [anim3 setFromValue:[NSNumber numberWithDouble:M_PI/12]]; // rotation angle
-    [anim3 setDuration:0.1];
-    [anim3 setRepeatCount:NSUIntegerMax];
-    [anim3 setAutoreverses:YES];
-    [self.battler3.layer addAnimation:anim3 forKey:@"iconShake"];
+    [self animateBattlers:self.battler1 withRotation:16 duration:0.05];
+    [self animateBattlers:self.battler2 withRotation:12 duration:0.3];
+    [self animateBattlers:self.battler3 withRotation:12 duration:0.1];
 
 
     [UIView animateWithDuration:0.5f animations:^{
@@ -81,10 +88,25 @@
     }];
 
 
-
-
-
 }
+
+- (void)animateBattlers:(UIImageView *)battler withRotation:(int)rotation duration:(CFTimeInterval)interval {
+    CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    [anim setToValue:[NSNumber numberWithFloat:0.0f]];
+    [anim setFromValue:[NSNumber numberWithDouble:M_PI/rotation]]; // rotation angle
+    [anim setDuration:interval];
+    [anim setRepeatCount:NSUIntegerMax];
+    [anim setAutoreverses:YES];
+    [battler.layer addAnimation:anim forKey:@"iconShake"];
+}
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.timer invalidate];
+}
+
+
 
 
 @end

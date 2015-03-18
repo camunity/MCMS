@@ -498,12 +498,12 @@
                                 <exclude reference="msX-eg-e0a"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="mAD-iO-Q7H"/>
                                 <exclude reference="A37-g9-rti"/>
                                 <exclude reference="HVf-VO-dB1"/>
                                 <exclude reference="IdU-WP-hjO"/>
                                 <exclude reference="rJa-pe-dJe"/>
                                 <exclude reference="FH5-mw-QzL"/>
-                                <exclude reference="mAD-iO-Q7H"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -514,12 +514,12 @@
                                 <include reference="msX-eg-e0a"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="mAD-iO-Q7H"/>
                                 <include reference="A37-g9-rti"/>
                                 <include reference="HVf-VO-dB1"/>
                                 <include reference="IdU-WP-hjO"/>
                                 <include reference="rJa-pe-dJe"/>
                                 <include reference="FH5-mw-QzL"/>
-                                <include reference="mAD-iO-Q7H"/>
                             </mask>
                         </variation>
                     </view>

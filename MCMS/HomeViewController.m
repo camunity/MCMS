@@ -39,12 +39,11 @@
 
     for (MagicalCreature *creature in self.creatures)
     { //shows me everything in the group
-        creature.creatureXP = arc4random_uniform(100)+1;
+        creature.creatureXP = arc4random_uniform(100) + 1;
         NSLog(@"%@ has %li", creature.name, (long)creature.creatureXP);
     }
 
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [self.creaturesTableView reloadData];
@@ -65,6 +64,7 @@
     return cell;
     
 }
+
 - (IBAction)onAddButtonPressed:(UIButton*)sender
 {
     if([self.creatureTextField.text isEqualToString:@""])
